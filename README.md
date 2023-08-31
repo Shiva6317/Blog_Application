@@ -10,3 +10,23 @@ in this application direct url blocked you can not access direct url if you acce
 ## landing page
 <img width="100%;" height="450px" src="https://github.com/Shiva6317/Blog_Application/blob/main/Screenshot%202023-08-31%20122258.png?raw=true"/>
 
+
+Linux and Mac:
+
+```bash
+sudo git clone https://github.com/Shiva6317/Blog_Application.git
+```
+
+Windows:
+
+```bash
+git clone https://github.com/Shiva6317/Blog_Application.git
+```
+
+## Contact
+
+If you want to contact me you can reach me at [Twitter]().
+
+## License
+
+MIT
