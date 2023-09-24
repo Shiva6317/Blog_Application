@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understand Gsap</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css
+    ">
+    <!-- ////CSS CODE START///// -->
+    <style>
+        @font-face {
+            font-family: home;
+            src: url(./Heading-Now-Variable.ttf);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body,
+        html {
+            height: 100%;
+            width: 100%;
+        }
+
+        #main {
+            height: 100%;
+            width: 100%;
+
+        }
+
+        #animate {
+            height: 100vh;
+            width: 100%;
+            position: absolute;
+            /* top:150vh; */
+            z-index: 1;
+            background-color: royalblue;
+            color: white;
+            font-size: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #page1 {
+            height: 100%;
+            width: 100%;
+            background-color: rgb(236, 107, 133);
+            overflow: hidden;
+
+
+        }
+
+        #page2 {
+            height: 100%;
+            width: 100%;
+            /* display: flex;
+            align-items: center;
+            justify-content: center; */
+            background-color: rgb(224, 70, 101);
+
+
+        }
+
+        #page3 {
+            height: 100%;
+            width: 100%;
+            background-color: rgb(231, 37, 76);
+
+        }
+
+        .nav {
+            height: 12%;
+            width: 100%;
+            background-color: black;
+            color: white;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            /* font-family: home; */
+            justify-content: space-between;
+        }
+
+        .nav-comp {
+            display: flex;
+            gap: 50px;
+
+        }
+
+        #page1>h1 {
+            font-size: 45em;
+            /* font-weight: 100; */
+            line-height: 600px;
+            padding-left: 30px;
+            text-transform: uppercase;
+            font-stretch: 250%;
+            font-family: home;
+            white-space: nowrap;
+            font-weight: 999;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="animate">0%</div>
+
+    <div id="main">
+        <div id="page1">
+            <div class="nav">
+                <h1>moqo</h1>
+                <div class="nav-comp">
+                    <h1>work</h1>
+                    <h1>contact</h1>
+                    <h1>menu</h1>
+
+                </div>
+            </div>
+
+            <h1 class="move">we build brands </h1>
+        </div>
+        <div id="page2">
+            <!-- <img class="img-right"
+            src="https://images.unsplash.com/photo-1501183638710-841dd1904471?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt=""> -->
+        </div>
+        <div id="page3"></div>
+
+
+
+
+
+
+
+    </div>
+
+</body>
+
+<!-- ///////////Gsap Cdn/////////////// -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+    integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- ///////////////////schroll trigger cdn///////////// -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+    integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- ///////////////////////locomotive js file///////////////////// -->
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+<!-- pure javascript -->
+<script>
+
+
+    const scroll = new LocomotiveScroll({
+        el: document.querySelector('#main'),
+        smooth: true
+    });
+
+
+
+    function time() {
+
+        var a = 0;
+        setInterval(function () {
+            a = a + Math.floor(Math.random() * 20);
+            if (a < 100) {
+                document.querySelector('#animate').innerHTML = a + "%";
+            }
+            else {
+                a = 100;
+                document.querySelector('#animate').innerHTML = a + "%";
+
+            }
+
+        }, 150)
+    }
+
+    // time();
+    var tl = gsap.timeline();
+
+    tl.to('#animate', {
+        top: "-100vh",
+        delay: 1.5,
+        duration: 2,
+        oNStart: time(),
+        // scrollTrigger:{
+        //     trigger:"#animate",
+        //     scroller:"body",
+        //     markers:true,
+        //     end:"top -200%",
+        //     scrub: 1,
+        //     pin: true,
+
+        // }
+    })
+
+    tl.to('.move', {
+        transform: "translateX(-100%)",
+
+        fontWeight: "200",
+
+        scrollTrigger: {
+            trigger: "#page1",
+            scroller: "body",
+            // markers: true,
+            start: "top 0%",
+            end: "top -100%",
+            scrub: 2,
+            pin: true,
+
+        }
+    })
+
+
+</script>
+
+
+</html>

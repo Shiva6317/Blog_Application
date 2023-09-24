@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body,
+html {
+    height: 100%;
+    width: 100%;
+    /* overflow: hidden; */
+}
+
+.main {
+    height: 100%;
+    width: 100%;
+    background-color: #111010;
+    
+}
+
+
+.nav {
+    height: 100px;
+    width: 100%;
+    background-color: crimson;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    justify-content: space-between;
+
+
+}
+/* 
+.nav{
+    height: 10%;
+    width: 100%;
+    padding: 0 20px;
+    color:white;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+
+} */

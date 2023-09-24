@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+
+
+    <style>
+        @font-face {
+            font-family: canopee;
+            src: url(./canopee.ttf);
+        }
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #navbar {
+            height: 10vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+
+        #navbar h1 {
+            font-family: canopee;
+            padding-left: 20px;
+
+        }
+        #navlink{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+        #navlink a{
+            font-size: 20px;
+            text-decoration: none;
+            margin-left: 50px;
+        }
+        #navlink a:hover{
+            background-color: black;
+        }
+
+        #search{
+            padding-right: 20px;
+        }
+        #search button{
+            direction: flex;
+            align-items: center;
+            justify-content: center;
+
+            height: 20px;
+            width: 120px;
+            padding: 0px 50px;
+        }
+        #search button img{
+            flex-wrap: nowrap;
+            height: 18px;
+            width: 20px;
+            object-fit: cover;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div id="navbar">
+            <div id="logo">
+                <h1>CoadError</h1>
+            </div>
+            <div id="navlink">
+                <a href="">Home</a>
+                <a href="">About</a>
+                <a href="">Contact</a>
+                <a href="">Blog</a>
+            </div>
+
+            <div id="search">
+                <button>
+                    <img src="https://png.pngtree.com/png-vector/20190115/ourmid/pngtree-vector-search-icon-png-image_320926.jpg" alt="" srcset="">
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
